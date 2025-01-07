@@ -1,0 +1,8 @@
+FROM node
+WORKDIR /app
+COPY . .
+RUN npm install
+ARG DEFAULT_PORT=3000
+ENV PORT=$DEFAULT_PORT
+EXPOSE $PORT
+CMD [ "node", "server.js" ]
